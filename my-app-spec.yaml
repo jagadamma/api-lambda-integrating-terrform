@@ -1,0 +1,281 @@
+openapi: 3.0.1
+info:
+  title: DemoAPIs
+  description: JD Apis Created by OpenAPI 3.0 For demo
+  version: '0.1'
+servers:
+  - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
+paths:
+  /v1:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: skills
+          in: query
+          schema:
+            type: string
+          example: Graphics%2CCoding
+        - name: qualifications
+          in: query
+          schema:
+            type: string
+          example: B.Tech
+        - name: location
+          in: query
+          schema:
+            type: string
+          example: Gurgaon
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: 641195b84fd18c72a834e0f5
+        - name: title
+          in: query
+          schema:
+            type: string
+          example: Software
+        - name: salary
+          in: query
+          schema:
+            type: string
+          example: '3'
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                '0':
+                  value: >-
+                    [{"_id": "641195b84fd18c72a834e0f5", "title": "Software
+                    Desginer", "industry": "Fashion", "department": "Desginer",
+                    "description": "We are seeking a highly motivated and
+                    skilled software engineer to join our team at XYZ Company.
+                    As a software engineer, you will be responsible for
+                    developing and maintaining software solutions that meet the
+                    needs of our clients. You will work closely with other
+                    members of the development team to create high-quality,
+                    reliable, and scalable software that meets project
+                    requirements", "location": "Gurgaon", "optional":
+                    {"min_salary": 4.0, "max_salary": 8, "skills": ["Figma",
+                    "Graphics", "Coding"], "qualifications": "BA"}}]
+                '1':
+                  value: >-
+                    [{"_id": "641be688318427448f48a96e", "title": "Software
+                    Developer", "industry": "Fashion", "department": "Engineer",
+                    "description": "We are seeking a highly motivated and
+                    skilled software engineer to join our team at XYZ Company.
+                    As a software engineer, you will be responsible for
+                    developing and maintaining software solutions that meet the
+                    needs of our clients. You will work closely with other
+                    members of the development team to create high-quality,
+                    reliable, and scalable software that meets project
+                    requirements", "location": "Gurgaon"}, {"_id":
+                    "641195db4fd18c72a834e0f9", "title": "Software Tester",
+                    "industry": "Information Technology", "department":
+                    "Engineer", "description": "We are seeking a highly
+                    motivated and skilled software engineer to join our team at
+                    XYZ Company. As a software engineer, you will be responsible
+                    for developing and maintaining software solutions that meet
+                    the needs of our clients. You will work closely with other
+                    members of the development team to create high-quality,
+                    reliable, and scalable software that meets project
+                    requirements", "location": "Gurgaon, HR", "optional":
+                    {"min_salary": 3.5, "max_salary": 5, "skills": ["ReactJS",
+                    "VueJS", "MongoDB", "AWS"], "qualifications": "B.Tech in
+                    CSE"}}, {"_id": "641195c74fd18c72a834e0f7", "title":
+                    "Software Engineer", "industry": "Information Technology",
+                    "department": "Engineer", "description": "We are seeking a
+                    highly motivated and skilled software engineer to join our
+                    team at XYZ Company. As a software engineer, you will be
+                    responsible for developing and maintaining software
+                    solutions that meet the needs of our clients. You will work
+                    closely with other members of the development team to create
+                    high-quality, reliable, and scalable software that meets
+                    project requirements", "location": "New Delhi", "optional":
+                    {"min_salary": 7.5, "max_salary": 12, "skills": ["Cpp",
+                    "Python", "PHP"], "qualifications": "B.tech"}}, {"_id":
+                    "641195b84fd18c72a834e0f5", "title": "Software Desginer",
+                    "industry": "Fashion", "department": "Desginer",
+                    "description": "We are seeking a highly motivated and
+                    skilled software engineer to join our team at XYZ Company.
+                    As a software engineer, you will be responsible for
+                    developing and maintaining software solutions that meet the
+                    needs of our clients. You will work closely with other
+                    members of the development team to create high-quality,
+                    reliable, and scalable software that meets project
+                    requirements", "location": "Gurgaon", "optional":
+                    {"min_salary": 4.0, "max_salary": 8, "skills": ["Figma",
+                    "Graphics", "Coding"], "qualifications": "BA"}}]
+      servers:
+        - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
+    put:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          example: 641d62b7f451e26c988a6649
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  maxLength: 50
+                industry:
+                  type: string
+                  maxLength: 50
+                department:
+                  type: string
+                  maxLength: 50
+                description:
+                  type: string
+                location:
+                  type: string
+                  maxLength: 50
+                optional:
+                  type: object
+                  properties:
+                    min_salary:
+                      type: number
+                    max_salary:
+                      type: number
+                    skills:
+                      type: array
+                      maxItems: 10
+                      uniqueItems: true
+                      items:
+                        type: string
+                    qualifications:
+                      type: string
+              required:
+                - title
+                - industry
+                - department
+                - description
+                - location
+                
+            examples:
+              '0':
+                value: "{\r\n    \"title\": \"Software Developerlol\",\r\n    \"industry\": \"Fashion\",\r\n    \"department\": \"Engineer\",\r\n    \"description\": \"We are seeking a highly motivated and skilled software engineer to join our team at XYZ Company. As a software engineer, you will be responsible for developing and maintaining software solutions that meet the needs of our clients. You will work closely with other members of the development team to create high-quality, reliable, and scalable software that meets project requirements\",\r\n    \"location\": \"Gurgaon\",\r\n    \"optional\": {\r\n        \"min_salary\": 7.365,\r\n        \"max_salary\": 12,\r\n        \"skills\": [\r\n            \"Figma\",\r\n            \"Graphics\",\r\n            \"AutoCAD\"\r\n        ],\r\n        \"qualifications\": \"BA\"\r\n    }\r\n}"
+              '1':
+                value: "{\r\n    \"title\": \"Software Testerlol1236\",\r\n    \"industry\": \"Information Technology\",\r\n    \"department\": \"Engineer\",\r\n    \"description\": \"We are seeking a highly motivated and skilled software engineer to join our team at XYZ Company. As a software engineer, you will be responsible for developing and maintaining software solutions that meet the needs of our clients. You will work closely with other members of the development team to create high-quality, reliable, and scalable software that meets project requirements\",\r\n    \"location\": \"Gurgaon, HR\",\r\n    \"optional\": {\r\n        \"min_salary\": 3.5,\r\n        \"max_salary\": 5,\r\n        \"skills\": [\r\n            \"ReactJS\",\r\n            \"VueJS\",\r\n            \"MongoDB\",\r\n            \"AWS\"\r\n        ],\r\n        \"qualifications\": \"B.Tech in CSE\"\r\n    }\r\n}"
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                '0':
+                  value: '{"message": "Document updated successfully!"}'
+      servers:
+        - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
+    post:
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  maxLength: 50
+                industry:
+                  type: string
+                  maxLength: 50
+                department:
+                  type: string
+                  maxLength: 50
+                description:
+                  type: string
+                location:
+                  type: string
+                  maxLength: 50
+                optional:
+                  type: object
+                  properties:
+                    min_salary:
+                      type: number
+                    max_salary:
+                      type: number
+                    skills:
+                      type: array
+                      maxItems: 10
+                      uniqueItems: true
+                      items:
+                        type: string
+                    qualifications:
+                      type: string
+              required:
+                - title
+                - industry
+                - department
+                - description
+                - location
+              
+            examples:
+              '0':
+                value: "{\r\n    \"title\": \"Software Developerlol\",\r\n    \"industry\": \"Fashion\",\r\n    \"department\": \"Engineer\",\r\n    \"description\": \"We are seeking a highly motivated and skilled software engineer to join our team at XYZ Company. As a software engineer, you will be responsible for developing and maintaining software solutions that meet the needs of our clients. You will work closely with other members of the development team to create high-quality, reliable, and scalable software that meets project requirements\",\r\n    \"location\": \"Gurgaon\",\r\n    \"optional\": {\r\n        \"min_salary\": 7.365,\r\n        \"max_salary\": 12,\r\n        \"skills\": [\r\n            \"Figma\",\r\n            \"Graphics\",\r\n            \"AutoCAD\"\r\n        ],\r\n        \"qualifications\": \"BA\"\r\n    }\r\n}"
+              '1':
+                value: "{\r\n    \"title\": \"Software Testerlol1236\",\r\n    \"industry\": \"Information Technology\",\r\n    \"department\": \"Engineer\",\r\n    \"description\": \"We are seeking a highly motivated and skilled software engineer to join our team at XYZ Company. As a software engineer, you will be responsible for developing and maintaining software solutions that meet the needs of our clients. You will work closely with other members of the development team to create high-quality, reliable, and scalable software that meets project requirements\",\r\n    \"location\": \"Gurgaon, HR\",\r\n    \"optional\": {\r\n        \"min_salary\": 3.5,\r\n        \"max_salary\": 5,\r\n        \"skills\": [\r\n            \"ReactJS\",\r\n            \"VueJS\",\r\n            \"MongoDB\",\r\n            \"AWS\"\r\n        ],\r\n        \"qualifications\": \"B.Tech in CSE\"\r\n    }\r\n}"
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  message:
+                    type: string
+              examples:
+                '0':
+                  value: >-
+                    {"message": "Document created successfully!", "id":
+                    "641d62b7f451e26c988a6649"}
+      servers:
+        - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
+    delete:
+      description: Auto generated using Swagger Inspector
+      parameters:
+        - name: id
+          required: true
+          in: query
+          schema:
+            type: string
+          example: 641d62b7f451e26c988a6649
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                '0':
+                  value: '{"message": "Document deleted successfully!"}'
+      servers:
+        - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
+    servers:
+      - url: https://q791ausyrf.execute-api.ap-south-1.amazonaws.com
