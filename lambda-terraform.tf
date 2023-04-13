@@ -9,4 +9,3 @@ resource "aws_lambda_function" "test_lambda" {
   s3_key        = "Jdfilter.zip"
  # source_code_hash = filebase64sha256("lambda_function.zip")
 }
-

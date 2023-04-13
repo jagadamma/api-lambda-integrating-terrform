@@ -69,4 +69,4 @@ resource "aws_api_gateway_integration" "integration" {
       integration_http_method = "DELETE"
       type                    = "AWS_PROXY"
       uri                     = aws_lambda_function.test_lambda.invoke_arn
-                                                          
+    }                                                      
